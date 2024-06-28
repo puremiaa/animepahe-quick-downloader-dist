@@ -7,7 +7,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Animepahe-QuickDownloader
+        <p>Animepahe-QuickDownloader</p>
+        <a style={{
+          color: "white",
+          borderBottom: "1px solid white",
+        }} 
+        target="_blank" rel="noreferrer"
+        href="https://github.com/hitarth-gg/animepahe-quick-downloader">
+          Github
+        </a>
       </header>
     </div>
   );

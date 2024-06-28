@@ -7,7 +7,6 @@ import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    // Function to extract links matching the specified pattern from script tags
     const extractLinksFromScripts = () => {
       const scripts = document.querySelectorAll<HTMLScriptElement>(
         'script[type="text/javascript"]'
@@ -17,9 +16,8 @@ function App() {
       const kwikLink = a.find((e) => e.startsWith("https://kwik"));
       console.log(kwikLink);
       if (kwikLink) {
-        // Redirect to the extracted URL
         window.location.href = kwikLink;
-        return; // Exit loop if a valid URL is found
+        return;
       }
     };
     const currentUrl = window.location.href;
@@ -29,9 +27,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Function to simulate click on the download button
     const clickDownloadButton = () => {
-      // Find the download button in the DOM
       const currentUrl = window.location.href;
       let a = currentUrl.split("/");
       const index = a.indexOf("f");
@@ -42,7 +38,6 @@ function App() {
         `form[action="${downloadUrl}"] button[type="submit"]`
       );
 
-      // Simulate click on the button if found
       if (downloadButton) {
         downloadButton.click();
       } else {
@@ -50,13 +45,11 @@ function App() {
       }
     };
 
-    // Check if the current URL matches the specific pattern
     const currentUrl = window.location.href;
     if (currentUrl.startsWith("https://kwik.si/")) {
-      // Call the clickDownloadButton function only for specific URLs
       clickDownloadButton();
     }
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+  }, []);
 
   return (
     <div className="App">
