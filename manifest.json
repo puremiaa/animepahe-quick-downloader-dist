@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Animepahe QuickDownloader",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "Popup",
+    "default_popup": "index.html",
+    "default_icon": "logo192.png"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "icons": {},
+  "content_scripts": [
+    {
+      "matches": ["https://blank.org/*", "https://pahe.win/*", "https://kwik.si/*"],
+      "js": ["content-script/src/main.tsx"],
+      "media": []
+    }
+  ]
+}
